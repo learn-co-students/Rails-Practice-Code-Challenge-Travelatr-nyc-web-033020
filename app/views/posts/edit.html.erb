@@ -1,0 +1,18 @@
+<h1> Edit Post  </h1>
+
+<%= form_for @post do |p| %> 
+
+<%= p.label :title %>
+<%= p.text_area :title %> 
+<br>
+<%= p.label :blogger_id %> 
+<%=p.collection_select :blogger_id, Blogger.all, :id, :name %> 
+<br>
+<%= p.label :destination_id %> 
+<%=p.collection_select :blogger_id, Destination.all, :id, :name %> 
+<br>
+<%= p.label :content %>
+<%= p.text_area :content %> 
+<br>
+<%=p.submit %> 
+<%end%> 

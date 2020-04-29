@@ -1,0 +1,7 @@
+<h1> <%= @destination.name %> </h1>
+
+<p>Average age of blogger: <%= @destination.av_age %> </p>
+
+    <% @destination.top_five.each do |post|  %>
+    <p><%= link_to post.title, post_path(post) %></p>
+<%end%> 
