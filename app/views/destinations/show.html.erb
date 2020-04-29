@@ -1,0 +1,12 @@
+<h1>Destination Info</h1>
+ 
+<h4>
+City: <%=@destination.name%><br>
+Country: <%=@destination.country%><br><br>
+Average age of all bloggers who have written about this destination: <%=@average%><br><br>
+this destination's post with the most likes: <%= link_to @preferred_post.title, post_path(@preferred_post.id) %><br><br>
+All of this destination's post: <br>
+<%@destination.posts.take(5).each do |post|%>
+<%=post.title%><br><br>
+<% end %>
+</h4>
