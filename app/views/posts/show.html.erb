@@ -1,0 +1,8 @@
+<h1>Post info</h1>
+
+<h4>
+Title: <%=@post.title%><br>
+Content: <%=@post.content%><br>
+Number of likes: <%=@post.likes%><br>
+Author: <%= link_to Blogger.find(@post.blogger_id).name, blogger_path(@post.blogger_id) %><br>
+Destination: <%= link_to Destination.find(@post.destination_id).name, destination_path(@post.destination_id) %><br></h4>

@@ -1,5 +1,5 @@
 class CreateBloggers < ActiveRecord::Migration[5.1]
-  def change
+  def change 
     create_table :bloggers do |t|
       t.string :name
       t.string :bio
