@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :find_post, only: [:show, :edit, :update, :add]
+
   def new
     @post = Post.new
     @bloggers = Blogger.all 
@@ -41,9 +43,15 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id]) 
   end
 
-  def like_post 
+  def like
     @post = Post.find(params[:id]) 
-    @post.update(likes: @post.likes + 1) 
+    @post.likes += 1 
+    redirect_to post_path(@post) 
+  end 
+
+  def add 
+    @post.add_like 
+    @post.save 
     redirect_to post_path(@post) 
   end 
 
@@ -57,5 +65,9 @@ class PostsController < ApplicationController
 
   def post_params 
     params.require(:post).permit(:title, :content, :likes, :blogger_id, :destination_id) 
+  end 
+
+  def find_post 
+    Post.find(params[:id]) 
   end 
 end

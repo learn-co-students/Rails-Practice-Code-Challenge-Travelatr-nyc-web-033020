@@ -33,5 +33,5 @@ Rails.application.routes.draw do
   resources :bloggers 
   resources :destinations 
   resources :posts 
-  patch '/postlike/:id', to: 'posts#like_post', as: 'postlike'
+  patch '/posts/:id/add', to: 'posts#add', as: "add_like"
 end
