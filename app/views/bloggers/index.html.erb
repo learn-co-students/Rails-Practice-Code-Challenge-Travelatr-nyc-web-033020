@@ -1,0 +1,29 @@
+<h1>Here is a list of some awesome travel bloggers:</h1> 
+
+<div><%= link_to 'Create Blogger', new_blogger_path %></div> 
+<br /> 
+
+<table> 
+    <thead> 
+        <tr> 
+            <th>Name</th> 
+            <th>Age</th> 
+            <th>Bio</th> 
+            <th></th> 
+        </tr> 
+    </thead> 
+    <tbody> 
+        <% @bloggers.each do |blogger| %> 
+            <tr> 
+                <td><%= blogger.name %></td> 
+                <td><%= blogger.age %></td> 
+                <td><%= blogger.bio %></td> 
+                <td> 
+                    <%= link_to 'View', blogger %> | 
+                    <%= link_to 'Edit', edit_blogger_path(blogger) %> | 
+                    <%= link_to 'Delete', blogger, method: :delete, data: { confirm: 'Are you sure you want to delete this blogger?' } %> 
+                </td> 
+            </tr> 
+        <% end %> 
+    </tbody> 
+</table>  

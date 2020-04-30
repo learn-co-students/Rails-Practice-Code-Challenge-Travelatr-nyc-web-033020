@@ -1,0 +1,13 @@
+<div class="container">
+    <h1><%= @blogger.name %></h1> 
+    <p><strong><%= @blogger.age %></strong></p> 
+    <p><strong><%= @blogger.bio %></strong></p> 
+    <p><strong>Most Liked Post: <%= @blogger.most_liked_post.title %></strong></p> 
+    <p><strong>Total likes: <%= @blogger.total_likes %></strong></p> 
+    <ul> 
+        <% @blogger.posts.each do |post| %> 
+            <li><%= link_to post.title, post_path(post) %></li> 
+        <% end %> 
+    </ul>
+
+</div>  
