@@ -1,0 +1,6 @@
+<%= @post.title %><br>
+<%= @post.content %><br>
+<%= @post.likes%><br>
+<%= link_to @post.blogger.name, blogger_path(@post.blogger) %><br>
+<%= link_to @post.destination.name, destination_path(@post.destination) %><br>
+<%= button_to "Add Like", like_post_path, :method => :patch %>
