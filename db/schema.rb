@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20180815094403) do
 
   create_table "bloggers", force: :cascade do |t|

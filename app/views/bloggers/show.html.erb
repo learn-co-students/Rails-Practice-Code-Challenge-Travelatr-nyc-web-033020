@@ -1,0 +1,9 @@
+<h1><%= @blogger.name%></h1>
+<h2>Total Likes</h2>
+<%=pluralize(@blogger.total_likes, "likes") %><br>
+<h2>Featured Post</h2>
+<% if @blogger.posts.length > 0 %>
+    <%= @blogger.featured_post.title%>
+    <% else %>
+    <%= "#{@blogger.name} hasn't written any posts yet."%>
+<% end %>
