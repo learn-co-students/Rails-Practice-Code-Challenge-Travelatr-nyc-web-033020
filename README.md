@@ -44,3 +44,21 @@ Post:
 	- A link to the page of that post's author
 	- A link to the page of that post's destination
 	- A like button link that increases the like count for that post (should take the user to the same page)
+
+Notes:
+
+1. Bloggers
+  -name
+  -age :integer
+  -bio
+
+2. Destinations
+  -name
+  -country
+
+3. Posts
+  -title
+  -content :text
+  -likes :integer
+  -blogger_id :integer
+  -destination_id :integer

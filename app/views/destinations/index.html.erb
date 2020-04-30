@@ -1,0 +1,7 @@
+<h2>Destinations:</h2>
+<ul>
+  <% @destinations.each do |d| %>
+  <li><%= link_to d.name, destination_path(d) %></li>
+  <% end %>
+
+</ul>

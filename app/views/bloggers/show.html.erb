@@ -1,0 +1,19 @@
+<h1><%= @blogger.name %></h1>
+<h3>Age: <%= @blogger.age %></h3>
+<h4>Bio:</h4>
+<p><%= @blogger.bio %></p>
+
+<h4>Total Likes: <%= @blogger.total_likes %></h4>
+
+<h4>Most-Liked Post: <%= 
+  link_to @blogger.post_with_most_likes.title, 
+  post_path(@blogger.post_with_most_likes)  
+  %>
+</h4>
+
+<h4>Top 5 Posted-About Destinations:</h4>
+<ol type="1">
+  <% @blogger.top_destinations_by_posts(5).each do |d| %>
+    <li><%= link_to d.name, destination_path(d) %></li>
+  <% end %>
+</ol>
