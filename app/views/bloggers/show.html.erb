@@ -1,0 +1,7 @@
+<h1>Bloggers#show</h1>
+<h2><%= @blogger.name %></h2>
+<h3>Total likes: <%= @blogger.total_likes %></h3> <br>
+<h3>Featured Post:</h3><br>
+<p><%= link_to @blogger.most_likes.title, post_path(@blogger.most_likes) %></p>
+
+ 
